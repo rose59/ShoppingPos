@@ -22,7 +22,7 @@ public class FullCutCalculateTest {
     @Test
     public void should_get_DiscountSum_when_given_FullCutValue() throws Exception {
         FullCutCalculate fullCutCalculate = new FullCutCalculate();
-        assertThat(fullCutCalculate.calculate(shoppingItem, 5.0),is(190.0));
+        assertThat(fullCutCalculate.calculate(shoppingItem, 5.0), is(190.0));
 
     }
 }

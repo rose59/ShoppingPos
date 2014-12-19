@@ -22,7 +22,6 @@ public class SecondHalfProperty extends Property {
 
     @Override
     public double getPromotionSum() {
-        double temp = new SecondHalfCalculate().calculate(this.getShoppingItem(), this.secondHalf);
-        return temp;
+        return new SecondHalfCalculate().calculate(this.getShoppingItem(), this.secondHalf);
     }
 }

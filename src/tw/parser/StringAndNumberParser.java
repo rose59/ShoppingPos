@@ -10,10 +10,9 @@ public class StringAndNumberParser extends Parser<Pair> {
     @Override
     @Named("StringAndNumberParser")
     public Pair convert(String line) {
-        if(line.contains("-")|line.contains(":")) {
+        if (line.contains("-") | line.contains(":")) {
             String[] pair = line.split("-|:");
-            return new Pair(pair[0],Integer.valueOf(pair[1]));
-        }
-        else return new Pair(line,1);
+            return new Pair(pair[0], Integer.valueOf(pair[1]));
+        } else return new Pair(line, 1);
     }
 }

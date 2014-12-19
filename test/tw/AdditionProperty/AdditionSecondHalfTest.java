@@ -27,8 +27,8 @@ public class AdditionSecondHalfTest {
 
     @Test
     public void should_get_DiscountSum_after_when_add_given_secondHalfProperty_list() throws Exception {
-        new AdditionSecondHalf().AdditionProperty(list,shoppingItems);
-        assertThat(shoppingItems.get(0).getPriceSum(),is(15.0));
+        new AdditionSecondHalf().AdditionProperty(list, shoppingItems);
+        assertThat(shoppingItems.get(0).getPriceSum(), is(15.0));
 
     }
 }

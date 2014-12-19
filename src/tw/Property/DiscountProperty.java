@@ -31,9 +31,7 @@ public class DiscountProperty extends Property {
 
     @Override
     public double getPromotionSum() {
-        double promotionSum = new PromotionCalculate().calculate(this.getShoppingItem(), this.promotion);
-        // System.out.println(promotionSum+" "+promotion);
 
-        return promotionSum;
+        return new PromotionCalculate().calculate(this.getShoppingItem(), this.promotion);
     }
 }

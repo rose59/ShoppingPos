@@ -13,20 +13,21 @@ import java.util.Map;
  */
 public class AdditionShoppingItem {
     private List<ShoppingItem> shoppingItems;
-    private Map<String,Integer> map;
+    private Map<String, Integer> map;
+
     public AdditionShoppingItem(List<ShoppingItem> itemList) {
-        this.shoppingItems =itemList;
+        this.shoppingItems = itemList;
     }
 
-    public void setMap(Map<String, Integer> map,List<Pair> pairs) {
+    public void setMap(Map<String, Integer> map, List<Pair> pairs) {
         QuantityProperty quantityProperty = new QuantityProperty(pairs);
         this.map = quantityProperty.getMap();
-        map=this.map;
+        map = this.map;
     }
 
     public void setShoppingItems(List<Pair> pairs) {
         for (Pair pair : pairs) {
-            ShoppingItem shoppingItem =new ShoppingItem(new Item(pair.getName(), pair.getValue()), this.map.get(pair.getName()));
+            ShoppingItem shoppingItem = new ShoppingItem(new Item(pair.getName(), pair.getValue()), this.map.get(pair.getName()));
             shoppingItems.add(shoppingItem);
         }
 

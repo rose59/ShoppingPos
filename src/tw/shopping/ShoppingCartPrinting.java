@@ -7,6 +7,7 @@ import com.google.inject.Inject;
  */
 public class ShoppingCartPrinting {
     private ShoppingCart shoppingCart;
+
     @Inject
     public ShoppingCartPrinting(ShoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;

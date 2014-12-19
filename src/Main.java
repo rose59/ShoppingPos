@@ -35,7 +35,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         //一系列读文件过程
-        Injector inj=Guice.createInjector(new Module() {
+        Injector inj = Guice.createInjector(new Module() {
             @Override
             public void configure(Binder binder) {
                 binder.bind(Parser.class).annotatedWith(Names.named("StringAndNumberParser")).to(StringAndNumberParser.class);

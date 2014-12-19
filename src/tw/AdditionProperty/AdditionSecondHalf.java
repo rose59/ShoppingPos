@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by 欣 on 2014/12/19.
  */
-public class AdditionSecondHalf extends AdditionProperty<String>  {
+public class AdditionSecondHalf extends AdditionProperty<String> {
 //    public AdditionSecondHalf(List<String> listPromotion, List<ShoppingItem> shoppingItems) {
 //        super(listPromotion, shoppingItems);
 //    }
@@ -17,7 +17,7 @@ public class AdditionSecondHalf extends AdditionProperty<String>  {
     @Override
     @Named("AdditionSecondHalf")
     public void AddProperty(List<String> list, ShoppingItem shoppingItem) {
-        SecondHalfProperty secondHalfProperty =new SecondHalfProperty(shoppingItem);
+        SecondHalfProperty secondHalfProperty = new SecondHalfProperty(shoppingItem);
         secondHalfProperty.setSecondHalf(list);
         shoppingItem.setPriceSum(secondHalfProperty.getPromotionSum());
 

@@ -8,7 +8,7 @@ import tw.shopping.ShoppingItem;
 public class PromotionCalculate implements Calculate {
     @Override
     public double calculate(ShoppingItem shoppingItem, double value) {
-        double promotionSum=shoppingItem.getItem().getPrice()*value;
+        double promotionSum = shoppingItem.getItem().getPrice() * value;
         return promotionSum;
     }
 }

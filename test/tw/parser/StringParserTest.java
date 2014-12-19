@@ -21,8 +21,8 @@ public class StringParserTest {
     @Test
     public void should_get_stringList_when_given_path() throws Exception {
         StringParser stringParser = new StringParser();
-        List<String> strings=stringParser.Parse(path);
-        assertThat(strings.get(0),is("ITEM000003"));
+        List<String> strings = stringParser.Parse(path);
+        assertThat(strings.get(0), is("ITEM000003"));
 
 
     }

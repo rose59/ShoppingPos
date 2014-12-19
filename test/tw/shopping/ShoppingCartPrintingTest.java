@@ -15,7 +15,7 @@ public class ShoppingCartPrintingTest {
     @Before
     public void setUp() throws Exception {
         shoppingItems = new ArrayList<ShoppingItem>();
-        shoppingItems.add(new ShoppingItem(new Item("item01",20.0),2));
+        shoppingItems.add(new ShoppingItem(new Item("item01", 20.0), 2));
 
     }
 

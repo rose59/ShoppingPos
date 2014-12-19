@@ -21,7 +21,7 @@ public class AdditionPropertyTest {
         list = new ArrayList<String>();
         list.add("item01");
         shoppingItems = new ArrayList<ShoppingItem>();
-        shoppingItems.add(new ShoppingItem(new Item("item01",10.0),2));
+        shoppingItems.add(new ShoppingItem(new Item("item01", 10.0), 2));
 
     }
 
@@ -33,8 +33,8 @@ public class AdditionPropertyTest {
                 shoppingItem.setPriceSum(list.size());
             }
         };
-        stringAdditionProperty.AdditionProperty(list,shoppingItems);
-        assertThat(shoppingItems.get(0).getPriceSum(),is(1.0));
+        stringAdditionProperty.AdditionProperty(list, shoppingItems);
+        assertThat(shoppingItems.get(0).getPriceSum(), is(1.0));
 
     }
 }

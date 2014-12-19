@@ -21,7 +21,7 @@ public class PromotionCalculateTest {
     @Test
     public void should_get_discountSum_when_given_promotion() throws Exception {
         PromotionCalculate promotionCalculate = new PromotionCalculate();
-        assertThat(promotionCalculate.calculate(shoppingItem,0.75),is(15.0));
+        assertThat(promotionCalculate.calculate(shoppingItem, 0.75), is(15.0));
 
     }
 }

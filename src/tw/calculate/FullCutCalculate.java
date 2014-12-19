@@ -9,6 +9,6 @@ public class FullCutCalculate implements Calculate {
 
     @Override
     public double calculate(ShoppingItem shoppingItem, double value) {
-        return shoppingItem.getPriceSum()-(int)(shoppingItem.getPriceSum()/100)*value;
+        return shoppingItem.getPriceSum() - (int) (shoppingItem.getPriceSum() / 100) * value;
     }
 }

@@ -12,6 +12,7 @@ public class ShoppingCart {
     private List<ShoppingItem> shoppingItems;
     private double promotionSum;
     private double sum;
+
     @Inject
     public ShoppingCart(List<ShoppingItem> shoppingItems) {
         this.shoppingItems = shoppingItems;
@@ -21,8 +22,8 @@ public class ShoppingCart {
         for (ShoppingItem shoppingItem : shoppingItems) {
             this.promotionSum += shoppingItem.getPriceSum();
         }
-        this.promotionSum-=(int)(this.promotionSum / 100) * value;
-        return this.promotionSum ;
+        this.promotionSum -= (int) (this.promotionSum / 100) * value;
+        return this.promotionSum;
     }
 
 

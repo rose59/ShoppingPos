@@ -7,9 +7,9 @@ public class Pair {
     private String name;
     private Integer value;
 
-    public Pair(String name,Integer value) {
+    public Pair(String name, Integer value) {
         this.name = name;
-        this.value=value;
+        this.value = value;
     }
 
     public String getName() {

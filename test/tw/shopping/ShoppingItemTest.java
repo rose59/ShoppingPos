@@ -14,8 +14,8 @@ public class ShoppingItemTest {
 
         Item item = new Item("item01", 10.0);
         ShoppingItem shoppingItem = new ShoppingItem(item, 2);
-        assertThat(shoppingItem.getItem(),is(item));
-        assertThat(shoppingItem.getQuantity(),is(2));
+        assertThat(shoppingItem.getItem(), is(item));
+        assertThat(shoppingItem.getQuantity(), is(2));
 
 
     }

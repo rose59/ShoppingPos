@@ -17,9 +17,9 @@ public class FullCutPropertyTest {
 
     @Before
     public void setUp() throws Exception {
-        shoppingItem =new ShoppingItem(new Item("item01",10.0),2);
+        shoppingItem = new ShoppingItem(new Item("item01", 10.0), 2);
         shoppingItem.setPriceSum(100);
-        list =new ArrayList<String>();
+        list = new ArrayList<String>();
         list.add("item01");
 
 
@@ -29,7 +29,7 @@ public class FullCutPropertyTest {
     public void should_get_PromotionSum_when_given_FullCutProperty() throws Exception {
         FullCutProperty fullCutProperty = new FullCutProperty(shoppingItem);
         fullCutProperty.setFullCut(list);
-        assertThat(fullCutProperty.getPromotionSum(),is(95.0));
+        assertThat(fullCutProperty.getPromotionSum(), is(95.0));
 
     }
 }

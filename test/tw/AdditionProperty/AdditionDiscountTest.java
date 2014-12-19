@@ -19,7 +19,7 @@ public class AdditionDiscountTest {
     @Before
     public void setUp() throws Exception {
         list = new ArrayList<Pair>();
-        list.add(new Pair("item01",75));
+        list.add(new Pair("item01", 75));
         shoppingItems = new ArrayList<ShoppingItem>();
         shoppingItems.add(new ShoppingItem(new Item("item01", 10.0), 2));
 
@@ -30,7 +30,7 @@ public class AdditionDiscountTest {
     public void should_get_DiscountSum_after_when_add_given_discountProperty_list() throws Exception {
         AdditionDiscount additionDiscount = new AdditionDiscount();
         additionDiscount.AdditionProperty(list, shoppingItems);
-        assertThat(shoppingItems.get(0).getPriceSum(),is(7.5));
+        assertThat(shoppingItems.get(0).getPriceSum(), is(7.5));
 
     }
 }

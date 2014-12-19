@@ -16,8 +16,8 @@ public class QuantityPropertyTest {
 
     @Before
     public void setUp() throws Exception {
-        pairs=new ArrayList<Pair>();
-        pairs.add(new Pair("item01",3));
+        pairs = new ArrayList<Pair>();
+        pairs.add(new Pair("item01", 3));
 
 
     }
@@ -25,7 +25,7 @@ public class QuantityPropertyTest {
     @Test
     public void should_get_quantityMap_when_given_pairList() throws Exception {
         QuantityProperty quantityProperty = new QuantityProperty(pairs);
-        assertThat(quantityProperty.getMap().get("item01"),is(3));
+        assertThat(quantityProperty.getMap().get("item01"), is(3));
 
     }
 }

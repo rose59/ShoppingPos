@@ -27,8 +27,8 @@ public class PropertyTest {
                 return shoppingItem.getPriceSum();
             }
         };
-        assertThat(property.getShoppingItem(),is(shoppingItem));
-        assertThat(property.getPromotionSum(),is(20.0));
+        assertThat(property.getShoppingItem(), is(shoppingItem));
+        assertThat(property.getPromotionSum(), is(20.0));
 
     }
 }
