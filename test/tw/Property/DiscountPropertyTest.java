@@ -1,5 +1,6 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -27,7 +28,8 @@ public class DiscountPropertyTest {
 
     @Test
     public void should_get_promotionSum_when_given_discount() throws Exception {
-        DiscountProperty discountProperty = new DiscountProperty(shoppingItem);
+        DiscountProperty discountProperty = Guice.createInjector().getInstance(DiscountProperty.class);
+        discountProperty.setShoppingItem(shoppingItem);
         discountProperty.setPromotion(pairs);
         assertThat(discountProperty.getPromotionSum(), is(7.5));
     }

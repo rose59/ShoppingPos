@@ -1,5 +1,6 @@
 package tw.AdditionProperty;
 
+import com.google.inject.Guice;
 import com.google.inject.name.Named;
 import tw.Property.DiscountProperty;
 import tw.parser.Pair;
@@ -19,7 +20,8 @@ public class AdditionDiscount extends AdditionProperty<Pair> {
     @Override
     @Named("AdditionDiscount")
     public void AddProperty(List<Pair> listPromotion, ShoppingItem shoppingItem) {
-        DiscountProperty discountProperty = new DiscountProperty(shoppingItem);
+        DiscountProperty discountProperty = Guice.createInjector().getInstance(DiscountProperty.class);
+        discountProperty.setShoppingItem(shoppingItem);
         discountProperty.setPromotion(listPromotion);
         shoppingItem.setPriceSum(discountProperty.getPromotionSum());
 

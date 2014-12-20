@@ -1,5 +1,6 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -27,7 +28,8 @@ public class FullCutPropertyTest {
 
     @Test
     public void should_get_PromotionSum_when_given_FullCutProperty() throws Exception {
-        FullCutProperty fullCutProperty = new FullCutProperty(shoppingItem);
+        FullCutProperty fullCutProperty = Guice.createInjector().getInstance(FullCutProperty.class);
+        fullCutProperty.setShoppingItem(shoppingItem);
         fullCutProperty.setFullCut(list);
         assertThat(fullCutProperty.getPromotionSum(), is(95.0));
 

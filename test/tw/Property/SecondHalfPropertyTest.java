@@ -1,5 +1,6 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -27,7 +28,8 @@ public class SecondHalfPropertyTest {
 
     @Test
     public void should_get_PromotionSum_when_given_SecondHalfProperty() throws Exception {
-        SecondHalfProperty secondHalfProperty = new SecondHalfProperty(shoppingItem);
+        SecondHalfProperty secondHalfProperty = Guice.createInjector().getInstance(SecondHalfProperty.class);
+        secondHalfProperty.setShoppingItem(shoppingItem);
         secondHalfProperty.setSecondHalf(list);
         assertThat(secondHalfProperty.getPromotionSum(), is(15.0));
     }

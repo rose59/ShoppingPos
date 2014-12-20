@@ -11,6 +11,7 @@ import static org.hamcrest.core.Is.is;
 public class PropertyTest {
 
     private ShoppingItem shoppingItem;
+    //Property property;
 
     @Before
     public void setUp() throws Exception {
@@ -21,12 +22,19 @@ public class PropertyTest {
 
     @Test
     public void should_get_promotionSum_when_given_shoppingItems() throws Exception {
-        Property property = new Property(shoppingItem) {
+
+//         property=spy(property);
+//        when(property.getPromotionSum()).thenReturn(shoppingItem.getPriceSum());
+
+
+        Property property = new Property() {
+
             @Override
             double getPromotionSum() {
                 return shoppingItem.getPriceSum();
             }
         };
+        property.setShoppingItem(shoppingItem);
         assertThat(property.getShoppingItem(), is(shoppingItem));
         assertThat(property.getPromotionSum(), is(20.0));
 

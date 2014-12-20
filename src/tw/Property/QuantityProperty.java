@@ -13,7 +13,7 @@ public class QuantityProperty {
 
     private Map<String, Integer> map = new HashMap<String, Integer>();
 
-    public QuantityProperty(List<Pair> pairs) {
+    public void setQuantityProperty(List<Pair> pairs) {
         for (Pair pair : pairs) {
             if (map.containsKey(pair.getName())) {
                 int number = map.get(pair.getName()) + pair.getValue();

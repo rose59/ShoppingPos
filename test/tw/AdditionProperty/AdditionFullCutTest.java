@@ -1,5 +1,6 @@
 package tw.AdditionProperty;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -28,7 +29,7 @@ public class AdditionFullCutTest {
 
     @Test
     public void should_get_DiscountSum_after_when_add_given_fullCutProperty_list() throws Exception {
-        new AdditionFullCut().AdditionProperty(list, shoppingItems);
+        Guice.createInjector().getInstance(AdditionFullCut.class).AdditionProperty(list, shoppingItems);
         assertThat(shoppingItems.get(0).getPriceSum(), is(20.0));
 
     }

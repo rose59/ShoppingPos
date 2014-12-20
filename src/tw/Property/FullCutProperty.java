@@ -1,7 +1,7 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import tw.calculate.FullCutCalculate;
-import tw.shopping.ShoppingItem;
 
 import java.util.List;
 
@@ -11,9 +11,6 @@ import java.util.List;
 public class FullCutProperty extends Property {
     private double FullCut;
 
-    public FullCutProperty(ShoppingItem shoppingItem) {
-        super(shoppingItem);
-    }
 
     public void setFullCut(List<String> list) {
         FullCut = 0.0;
@@ -24,6 +21,6 @@ public class FullCutProperty extends Property {
 
     @Override
     public double getPromotionSum() {
-        return new FullCutCalculate().calculate(this.getShoppingItem(), this.FullCut);
+        return Guice.createInjector().getInstance(FullCutCalculate.class).calculate(this.getShoppingItem(), this.FullCut);
     }
 }

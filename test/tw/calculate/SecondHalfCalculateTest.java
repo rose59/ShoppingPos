@@ -1,5 +1,6 @@
 package tw.calculate;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -22,7 +23,7 @@ public class SecondHalfCalculateTest {
 
     @Test
     public void should_get_discountSum_when_given_SecondHalf() throws Exception {
-        SecondHalfCalculate secondHalfCalculate = new SecondHalfCalculate();
+        SecondHalfCalculate secondHalfCalculate = Guice.createInjector().getInstance(SecondHalfCalculate.class);
         assertThat(secondHalfCalculate.calculate(shoppingItem, 0.5), is(25.0));
 
     }

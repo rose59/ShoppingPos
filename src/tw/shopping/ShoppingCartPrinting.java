@@ -1,15 +1,13 @@
 package tw.shopping;
 
-import com.google.inject.Inject;
-
 /**
  * Created by 欣 on 2014/12/19.
  */
 public class ShoppingCartPrinting {
     private ShoppingCart shoppingCart;
 
-    @Inject
-    public ShoppingCartPrinting(ShoppingCart shoppingCart) {
+   // @Inject
+    public  void setShoppingCart(ShoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 

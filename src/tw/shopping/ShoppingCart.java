@@ -1,7 +1,5 @@
 package tw.shopping;
 
-import com.google.inject.Inject;
-
 import java.util.List;
 
 /**
@@ -13,8 +11,7 @@ public class ShoppingCart {
     private double promotionSum;
     private double sum;
 
-    @Inject
-    public ShoppingCart(List<ShoppingItem> shoppingItems) {
+    public void setShoppingItems(List<ShoppingItem> shoppingItems) {
         this.shoppingItems = shoppingItems;
     }
 

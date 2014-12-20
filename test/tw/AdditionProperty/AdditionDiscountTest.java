@@ -1,5 +1,6 @@
 package tw.AdditionProperty;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -28,8 +29,7 @@ public class AdditionDiscountTest {
 
     @Test
     public void should_get_DiscountSum_after_when_add_given_discountProperty_list() throws Exception {
-        AdditionDiscount additionDiscount = new AdditionDiscount();
-        additionDiscount.AdditionProperty(list, shoppingItems);
+        Guice.createInjector().getInstance(AdditionDiscount.class).AdditionProperty(list, shoppingItems);
         assertThat(shoppingItems.get(0).getPriceSum(), is(7.5));
 
     }

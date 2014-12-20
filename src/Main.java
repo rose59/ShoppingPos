@@ -11,7 +11,6 @@ import tw.shopping.ShoppingItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -29,8 +28,6 @@ public class Main {
     private static AdditionProperty AdditionSecondHalf;
     @Inject
     @Named("AdditionFullCut")
-
-
     private static AdditionProperty AdditionFullCut;
 
     public static void main(String[] args) throws IOException {
@@ -54,10 +51,7 @@ public class Main {
         //一系列录入设置属性过程
 
         List<ShoppingItem> shoppingItems = new ArrayList<ShoppingItem>();
-        HashMap<String, Integer> stringIntegerHashMap = new HashMap<String, Integer>();
-        AdditionShoppingItem additionShoppingItem = new AdditionShoppingItem(shoppingItems);
-        additionShoppingItem.setMap(stringIntegerHashMap, listQuantity);
-        additionShoppingItem.setShoppingItems(listItem);
+        Guice.createInjector().getInstance(InitShoppingItem.class).setShoppingItems(shoppingItems, listItem, listQuantity);
         //计算过程--1.shoppingItem折扣总价
         Main.AdditionDiscount.AdditionProperty(listPromotion, shoppingItems);
         //计算过程--2.shoppingItem二件半价
@@ -66,8 +60,11 @@ public class Main {
         Main.AdditionFullCut.AdditionProperty(listFullCut, shoppingItems);
 
         //形成购物清单
-        ShoppingCart shoppingCart = new ShoppingCart(shoppingItems);
-        new ShoppingCartPrinting(shoppingCart).printCart(10.0);
+        ShoppingCart shoppingCart = Guice.createInjector().getInstance(ShoppingCart.class);
+               shoppingCart.setShoppingItems(shoppingItems);
+        ShoppingCartPrinting shoppingCartPrinting = Guice.createInjector().getInstance(ShoppingCartPrinting.class);
+        shoppingCartPrinting.setShoppingCart(shoppingCart);
+        shoppingCartPrinting.printCart(10.0);
 
 
     }

@@ -1,5 +1,6 @@
 package tw.calculate;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
@@ -20,7 +21,7 @@ public class PromotionCalculateTest {
 
     @Test
     public void should_get_discountSum_when_given_promotion() throws Exception {
-        PromotionCalculate promotionCalculate = new PromotionCalculate();
+        PromotionCalculate promotionCalculate = Guice.createInjector().getInstance(PromotionCalculate.class);
         assertThat(promotionCalculate.calculate(shoppingItem, 0.75), is(15.0));
 
     }

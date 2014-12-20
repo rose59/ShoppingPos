@@ -1,8 +1,8 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import tw.calculate.PromotionCalculate;
 import tw.parser.Pair;
-import tw.shopping.ShoppingItem;
 
 import java.util.List;
 
@@ -11,10 +11,6 @@ import java.util.List;
  */
 public class DiscountProperty extends Property {
     private double promotion;
-
-    public DiscountProperty(ShoppingItem shoppingItem) {
-        super(shoppingItem);
-    }
 
     public void setPromotion(List<Pair> pairs) {
         this.promotion = 1.0;
@@ -32,6 +28,6 @@ public class DiscountProperty extends Property {
     @Override
     public double getPromotionSum() {
 
-        return new PromotionCalculate().calculate(this.getShoppingItem(), this.promotion);
+        return Guice.createInjector().getInstance(PromotionCalculate.class).calculate(this.getShoppingItem(), this.promotion);
     }
 }

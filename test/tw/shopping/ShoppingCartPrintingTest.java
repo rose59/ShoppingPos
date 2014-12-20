@@ -1,12 +1,14 @@
 package tw.shopping;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.item.Item;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class ShoppingCartPrintingTest {
 
@@ -21,10 +23,11 @@ public class ShoppingCartPrintingTest {
 
     @Test
     public void should_printCart_when_given_shoppingCart() throws Exception {
-        ShoppingCart shoppingCart = new ShoppingCart(shoppingItems);
-        ShoppingCartPrinting shoppingCartPrinting = new ShoppingCartPrinting(shoppingCart);
-        assertTrue(shoppingCartPrinting.printCart(10.0));
-
+        ShoppingCart shoppingCart = Guice.createInjector().getInstance(ShoppingCart.class);
+        shoppingCart.setShoppingItems(shoppingItems);
+        ShoppingCartPrinting mock = mock(ShoppingCartPrinting.class);
+        mock.printCart(10.0);
+        verify(mock).printCart(10.0);
 
     }
 }

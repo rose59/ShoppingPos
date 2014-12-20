@@ -8,7 +8,7 @@ import tw.shopping.ShoppingItem;
 public abstract class Property {
     private ShoppingItem shoppingItem;
 
-    public Property(ShoppingItem shoppingItem) {
+    public void setShoppingItem(ShoppingItem shoppingItem) {
         this.shoppingItem = shoppingItem;
     }
 

@@ -1,5 +1,6 @@
 package tw.Property;
 
+import com.google.inject.Guice;
 import org.junit.Before;
 import org.junit.Test;
 import tw.parser.Pair;
@@ -24,7 +25,8 @@ public class QuantityPropertyTest {
 
     @Test
     public void should_get_quantityMap_when_given_pairList() throws Exception {
-        QuantityProperty quantityProperty = new QuantityProperty(pairs);
+        QuantityProperty quantityProperty = Guice.createInjector().getInstance(QuantityProperty.class);
+        quantityProperty.setQuantityProperty(pairs);
         assertThat(quantityProperty.getMap().get("item01"), is(3));
 
     }
